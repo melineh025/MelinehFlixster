@@ -9,5 +9,5 @@ package com.example.melinehflixster
  * In this app, it's implemented by [MoviesPlayingFragment]
  */
 interface OnListFragmentInteractionListener {
-    fun onItemClick(item: MoviesPlaying)
+    fun onItemClick(item: BestSellerBook)
 }
