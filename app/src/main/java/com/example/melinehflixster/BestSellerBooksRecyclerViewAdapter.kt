@@ -52,7 +52,7 @@ class BestSellerBooksRecyclerViewAdapter(
         holder.mBookAuthor.text = book.author
         holder.mBookDescription.text = book.description
 
-
+        //Must Add Base URL In the Glide call
         Glide.with(holder.mView)
             .load("https://image.tmdb.org/t/p/w500/" + book.bookImageUrl)
             .centerInside()
