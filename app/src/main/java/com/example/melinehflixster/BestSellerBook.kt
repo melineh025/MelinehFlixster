@@ -20,6 +20,7 @@ class BestSellerBook {
     @SerializedName("author")
     var author: String? = null
 
+    // "poster_path" and "overview" are defined in Movies API website
     @SerializedName("poster_path")
     var bookImageUrl: String? = null
 
