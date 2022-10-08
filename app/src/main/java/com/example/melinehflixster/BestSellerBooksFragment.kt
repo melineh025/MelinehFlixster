@@ -127,7 +127,7 @@ class BestSellerBooksFragment : Fragment(), OnListFragmentInteractionListener {
      * What happens when a particular book is clicked.
      */
     override fun onItemClick(item: BestSellerBook) {
-        Toast.makeText(context, "test: " + item.title, Toast.LENGTH_LONG).show()
+       // Toast.makeText(context, "test: " + item.title, Toast.LENGTH_LONG).show()
     }
 
 }
