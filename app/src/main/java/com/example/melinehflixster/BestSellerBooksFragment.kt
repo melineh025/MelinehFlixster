@@ -67,7 +67,9 @@ class BestSellerBooksFragment : Fragment(), OnListFragmentInteractionListener {
                 //"https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json",
 
                 //"https://api.themoviedb.org/3/movie/now_playing?api_key=<<api_key>>",
-                "https://api.themoviedb.org/3/movie/now_playing?api_key=b365d3676fa8d5b379712865e6c596ea",
+                //"https://api.themoviedb.org/3/movie/now_playing?api_key=b365d3676fa8d5b379712865e6c596ea",
+                //"https://api.themoviedb.org/3/movie/popular?api_key=b365d3676fa8d5b379712865e6c596ea",
+                "https://api.themoviedb.org/3/movie/297761/recommendations?api_key=b365d3676fa8d5b379712865e6c596ea",
                 params,
                 object : JsonHttpResponseHandler()
         {

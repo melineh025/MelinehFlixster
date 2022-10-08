@@ -27,4 +27,17 @@ class BestSellerBook {
     @JvmField
     @SerializedName("overview")
     var description: String? = null
+
+    @JvmField
+    @SerializedName("backdrop_path")
+    var backdropUrl: String? = null
+
+    @JvmField
+    @SerializedName("release_date")
+    val releaseDate: String? = null
+
+    @JvmField
+    @SerializedName("vote_average")
+    val averageVote = 0.0
+
 }

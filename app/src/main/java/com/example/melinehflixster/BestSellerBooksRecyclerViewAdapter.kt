@@ -1,13 +1,17 @@
 package com.example.melinehflixster
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.melinehflixster.R.id
+import java.security.AccessController.getContext
+import com.example.melinehflixster.MovieDetailActivity
 /**
  * [RecyclerView.Adapter] that can display a [BestSellerBook] and makes a call to the
  * specified [OnListFragmentInteractionListener].
@@ -62,6 +66,16 @@ class BestSellerBooksRecyclerViewAdapter(
             holder.mItem?.let { book ->
                 mListener?.onItemClick(book)
             }
+
+            val i = Intent(holder.mView.context, MovieDetailActivity::class.java)
+            i.putExtra("extraPath", book.backdropUrl)
+            i.putExtra("extraDate", book.releaseDate)
+            i.putExtra("extraRating", book.averageVote)
+
+
+            //startActivity(MovieDetailActivity, i, null)
+            //startActivity(holder.mView.context, i, null)
+
         }
     }
 
