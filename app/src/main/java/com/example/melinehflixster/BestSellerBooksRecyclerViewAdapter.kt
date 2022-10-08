@@ -1,5 +1,6 @@
 package com.example.melinehflixster
 
+import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.melinehflixster.R.id
 import java.security.AccessController.getContext
-import com.example.melinehflixster.MovieDetailActivity
+import com.example.melinehflixster.MovieActivityDetail
 /**
  * [RecyclerView.Adapter] that can display a [BestSellerBook] and makes a call to the
  * specified [OnListFragmentInteractionListener].
@@ -23,11 +24,14 @@ class BestSellerBooksRecyclerViewAdapter(
     )
     : RecyclerView.Adapter<BestSellerBooksRecyclerViewAdapter.BookViewHolder>()
     {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int, ): BookViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.fragment_best_seller_book, parent, false)
+
         return BookViewHolder(view)
     }
+
+
 
     /**
      * This inner class lets us refer to all the different View elements
@@ -43,6 +47,8 @@ class BestSellerBooksRecyclerViewAdapter(
         override fun toString(): String {
             return mBookTitle.toString() + " '" + mBookAuthor.text + "'"
         }
+
+
     }
 
     /**
@@ -62,21 +68,24 @@ class BestSellerBooksRecyclerViewAdapter(
             .centerInside()
             .into(holder.mBookImage)
 
+
         holder.mView.setOnClickListener {
             holder.mItem?.let { book ->
                 mListener?.onItemClick(book)
             }
 
-            val i = Intent(holder.mView.context, MovieDetailActivity::class.java)
-            i.putExtra("extraPath", book.backdropUrl)
-            i.putExtra("extraDate", book.releaseDate)
-            i.putExtra("extraRating", book.averageVote)
 
+            val i = Intent(holder.mView.context, MovieActivityDetail::class.java)
+             i.putExtra("extraPath", book.backdropUrl)
+             i.putExtra("extraDate", book.releaseDate)
+             i.putExtra("extraRating", book.averageVote.toString())
 
-            //startActivity(MovieDetailActivity, i, null)
-            //startActivity(holder.mView.context, i, null)
+            startActivity(holder.mView.context, i, null)
 
         }
+
+
+
     }
 
     /**
